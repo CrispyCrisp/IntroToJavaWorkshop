@@ -2,6 +2,8 @@ package day3;
 
 import javax.swing.JOptionPane;
 
+import jdk.nashorn.internal.scripts.JO;
+
 /**
  * Teacher's Note: 
  * Have the kids play with the Speak & Spell. 
@@ -11,20 +13,66 @@ import javax.swing.JOptionPane;
  * Allow them to code it themselves, or use this recipe.
  **/
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 public class SpeakAndSpell {
 
 	public static void main(String[] args) {
+		int score = 0;
 		// 1. Use the speak method to say the word. "e.g. spell mandlebrot"
-
+        speak ("spell onomatopoeia");
 		// 2. Catch the user's answer in a String
-
+   
+   String answer = JOptionPane.showInputDialog("");
 		// 3. If the user spelled the word correctly, speak "correct"
-
+        if  (answer.equals("onomatopoeia")){
+        speak ("Correct");	
+        score = score +1;
+        }
+        else{
+        speak ("Error");
+        score = score -1;
+        }
 		// 4. Otherwise say "wrong"
 
 		// 5. repeat the process for other words
 		
-	}
+
+	
+	// 1. Use the speak method to say the word. "e.g. spell mandlebrot"
+    speak ("spell lelouch");
+	// 2. Catch the user's answer in a String
+String answer2 = JOptionPane.showInputDialog("");
+	// 3. If the user spelled the word correctly, speak "correct"
+    if  (answer2.equals("lelouch")){
+    speak ("Correct");	
+    score = score +1;
+    }
+    else{
+    speak ("Error");
+    score = score -1;
+    }
+    speak (""+score);
+	// 4. Otherwise say "wrong"
+
+	// 5. repeat the process for other words
+	
+}
 
 	static void speak(String words) {
 		try {
